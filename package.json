@@ -1,0 +1,63 @@
+{
+  "author": "DiegoADC",
+  "devDependencies": {
+    "@rollup/plugin-image": "^3.0.2",
+    "@size-limit/preset-small-lib": "^9.0.0",
+    "@types/react": "^18.2.22",
+    "@types/react-dom": "^18.2.7",
+    "husky": "^8.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "size-limit": "^9.0.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/siac-product-card.esm.js",
+  "name": "siac-product-card",
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "scripts": {
+    "analyze": "size-limit --why",
+    "build": "tsdx build",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "start": "tsdx watch",
+    "test": "tsdx test --passWithNoTests"
+  },
+  "size-limit": [
+    {
+      "limit": "10 KB",
+      "path": "dist/siac-product-card.cjs.production.min.js"
+    },
+    {
+      "limit": "10 KB",
+      "path": "dist/siac-product-card.esm.js"
+    }
+  ],
+  "typings": "dist/index.d.ts",
+  "version": "0.0.1"
+}
